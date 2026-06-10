@@ -212,9 +212,18 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--forest);outline-offse
       <p class="about"><a class="about-name" href="https://www.linkedin.com/in/felixbeccar/" target="_blank" rel="noopener">Felix Beccar</a> — finance, operations and strategy across LinkedIn, Pipedrive, Mural and Aqmen, now an AI-first operating partner to scale-ups.</p>
       <div class="services"><span>Finance</span><span>Operations</span><span>Strategy</span></div>
     </div>
-    <a class="cta" href="/cdn-cgi/l/email-protection#11787f777e5177747d786967747f65646374623f7078">Get in touch <span class="arr">&rarr;</span></a>
+    <a class="cta" id="contact-cta" href="#" rel="nofollow">Get in touch <span class="arr">&rarr;</span></a>
   </footer>
 
 </div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<script>
+  /* Assemble the mailto at runtime so email-obfuscation proxies (e.g. Cloudflare)
+     never see a literal address in the HTML and can't rewrite the link. */
+  (function () {
+    var user = 'info', domain = 'felixventures.ai';
+    var a = document.getElementById('contact-cta');
+    if (a) a.setAttribute('href', 'mailto:' + user + '@' + domain);
+  })();
+</script>
+</body>
 </html>
