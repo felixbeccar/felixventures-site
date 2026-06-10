@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Felix Ventures — AI-first finance, operations &amp; strategy for scale-ups</title>
+<meta name="description" content="Felix Ventures is an AI-first consultancy. Finance, operations and strategy for startups past product-market fit and ready to scale. Led by Felix Beccar.">
+<meta property="og:title" content="Felix Ventures">
+<meta property="og:description" content="AI-first finance, operations and strategy for scale-ups.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="3" fill="%23111"/><text x="16" y="23" font-family="Helvetica Neue,Arial,sans-serif" font-size="20" font-weight="700" text-anchor="middle" letter-spacing="-1.5" fill="%23fff">F<tspan fill="%232D7D52" font-weight="300">V</tspan></text></svg>'>
+<style>
+:root{
+  --forest:#2D7D52; --forest-deep:#1F5A3A; --forest-mid:#a8d4bc;
+  --ink-1:#111111; --ink-2:#444444; --ink-3:#888888; --ink-4:#bbbbbb; --rule:#e2e2e2;
+  --paper:#ffffff;
+  --font:'Helvetica Neue',Helvetica,Arial,sans-serif;
+  --pad: clamp(28px, 5.5vw, 80px);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  font-family:var(--font);
+  background:var(--paper);
+  color:var(--ink-1);
+  -webkit-font-smoothing:antialiased;
+  min-height:100svh;
+}
+a{color:inherit;}
+
+.page{
+  position:relative;
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  padding:var(--pad);
+  overflow:hidden;
+}
+
+/* Wordmark */
+.wm{font-weight:700;letter-spacing:-0.035em;line-height:1;color:var(--ink-1);white-space:nowrap;font-size:clamp(20px,2.4vw,25px);text-decoration:none;}
+.wm .lt{font-weight:300;}
+.wm .dot{color:var(--forest);}
+
+/* Watermark FV */
+.watermark{
+  position:absolute;
+  right:clamp(-60px,-3vw,-40px);
+  top:14vh;
+  font-weight:700;
+  font-size:min(58vw,680px);
+  line-height:0.8;
+  letter-spacing:-0.06em;
+  z-index:0;
+  user-select:none;
+  pointer-events:none;
+}
+.watermark .f{color:#000;opacity:0.035;}
+.watermark .v{color:var(--forest);opacity:0.06;font-weight:300;}
+
+/* Header */
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:24px;
+  z-index:2;
+}
+.top-contact{
+  text-align:right;
+  font-size:13px;
+  line-height:1.95;
+  color:var(--ink-3);
+  letter-spacing:0.03em;
+}
+.top-contact a{color:var(--ink-2);text-decoration:none;}
+.top-contact a:hover{color:var(--forest);}
+
+/* Hero */
+.hero{
+  margin:auto 0;
+  z-index:2;
+  max-width:1000px;
+  padding:6vh 0;
+}
+.eyebrow{
+  font-size:clamp(10px,1.3vw,12px);
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  color:var(--forest);
+  font-weight:600;
+  margin-bottom:clamp(18px,2.4vw,26px);
+}
+.hero h1{
+  font-size:clamp(38px,6.6vw,88px);
+  line-height:1.0;
+  letter-spacing:-0.035em;
+  font-weight:700;
+  color:var(--ink-1);
+  max-width:18ch;
+  text-wrap:balance;
+}
+.hero h1 .dot{color:var(--forest);}
+.hero p{
+  margin-top:clamp(20px,2.6vw,30px);
+  font-size:clamp(17px,2vw,22px);
+  line-height:1.5;
+  color:var(--ink-2);
+  max-width:48ch;
+  font-weight:400;
+}
+
+/* Footer */
+.foot{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:32px;
+  z-index:2;
+  border-top:1px solid var(--ink-1);
+  padding-top:22px;
+}
+.about{
+  max-width:62ch;
+  font-size:clamp(13px,1.4vw,14px);
+  line-height:1.65;
+  color:var(--ink-2);
+}
+.about-name{color:var(--ink-1);font-weight:600;text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:1px;}
+.about-name:hover{color:var(--forest);border-color:var(--forest-mid);}
+.services{
+  display:flex;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+.services span{
+  font-size:clamp(10px,1.2vw,11px);
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--ink-3);
+  font-weight:600;
+  padding-right:18px;
+  margin-right:18px;
+  border-right:1px solid var(--rule);
+}
+.services span:last-child{border-right:0;padding-right:0;margin-right:0;}
+.cta{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:var(--ink-1);
+  color:#fff;
+  font-size:clamp(13px,1.5vw,15px);
+  font-weight:600;
+  letter-spacing:0.02em;
+  padding:15px 26px;
+  text-decoration:none;
+  white-space:nowrap;
+  transition:background .18s ease;
+}
+.cta .arr{color:var(--forest-mid);transition:color .18s ease;}
+.cta:hover{background:var(--forest);}
+.cta:hover .arr{color:#fff;}
+
+a:focus-visible,.cta:focus-visible{outline:2px solid var(--forest);outline-offset:3px;}
+
+/* Entrance */
+@media (prefers-reduced-motion: no-preference){
+  .top,.hero,.foot{animation:rise .7s cubic-bezier(.2,.7,.2,1) both;}
+  .hero{animation-delay:.06s;}
+  .foot{animation-delay:.12s;}
+  @keyframes rise{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+}
+
+/* ───── Tablet ───── */
+@media (max-width:900px){
+  .watermark{top:auto;bottom:18vh;font-size:min(72vw,520px);}
+}
+
+/* ───── Mobile ───── */
+@media (max-width:640px){
+  .top-contact{display:none;}
+  .hero{padding:8vh 0;}
+  .hero h1{max-width:16ch;}
+  .foot{
+    flex-direction:column;
+    align-items:stretch;
+    gap:24px;
+  }
+  .cta{justify-content:center;width:100%;padding:17px 26px;}
+  .watermark{opacity:0.8;bottom:24vh;font-size:96vw;}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="watermark" aria-hidden="true"><span class="f">F</span><span class="v">V</span></div>
+
+  <header class="top">
+    <a class="wm" href="/">Felix<span class="lt"> Ventures</span><span class="dot">.</span></a>
+  </header>
+
+  <main class="hero">
+    <div class="eyebrow">AI-first consultancy</div>
+    <h1>Product-market fit got you here. Operating discipline gets you the rest of the way<span class="dot">.</span></h1>
+    <p>AI-first finance, operations and strategy for scale-ups.</p>
+  </main>
+
+  <footer class="foot">
+    <div>
+      <p class="about"><a class="about-name" href="https://www.linkedin.com/in/felixbeccar/" target="_blank" rel="noopener">Felix Beccar</a> — finance, operations and strategy across LinkedIn, Pipedrive, Mural and Aqmen, now an AI-first operating partner to scale-ups.</p>
+      <div class="services"><span>Finance</span><span>Operations</span><span>Strategy</span></div>
+    </div>
+    <a class="cta" href="/cdn-cgi/l/email-protection#11787f777e5177747d786967747f65646374623f7078">Get in touch <span class="arr">&rarr;</span></a>
+  </footer>
+
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
